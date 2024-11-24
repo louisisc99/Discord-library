@@ -30,5 +30,58 @@ This repository provides a robust, user-friendly library for creating Discord-st
 To use **DiscordLib**, you need to load it in your Roblox script. Use the following line of code to load the library:
 
 ```lua
--- Load the DiscordLib UI library
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
+```
+Window 
+```lua
+local win = DiscordLib:Window("My Discord UI")
+```
+servers
+```lua
+local mainServer = win:Server("Main Server", "http://www.roblox.com/asset/?id=6031075938")
+local actionsChannel = mainServer:Channel("Actions")
+```
+buttons
+```lua
+actionsChannel:Button("Greet", function()
+    DiscordLib:Notification("Notification", "Hello, world!", "Got it!")
+end)
+```
+toggles
+```lua
+actionsChannel:Toggle("Enable Cool Feature", false, function(state)
+    if state then
+        print("Cool feature enabled!")
+    else
+        print("Cool feature disabled!")
+    end
+end)
+```
+Slider
+```lua
+local slider = actionsChannel:Slider("Adjust Volume", 0, 100, 50, function(value)
+    print("Volume set to:", value)
+end)
+```
+dropdowns 
+```lua
+local dropdown = actionsChannel:Dropdown("Select Option", {"Option 1", "Option 2", "Option 3"}, function(option)
+    print("Selected:", option)
+end)
+```
+Colorpicker 
+```lua
+local colorPicker = actionsChannel:Colorpicker("ESP Color", Color3.fromRGB(255, 1, 1), function(color)
+    print("Selected color:", color)
+end)
+```
+Textboxes 
+```lua
+local textbox = actionsChannel:Textbox("Enter Gun Power", "Type here!", true, function(input)
+    print("User input:", input)
+end)
+```
+label 
+```lua
+actionsChannel:Label("This is just a label.")
+```
