@@ -11,3 +11,7 @@ To use **DiscordLib** in your script, you first need to load it into your game. 
 ```lua
 -- Load the DiscordLib UI library
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
+
+
+-- Create a new window with the title "My Window"
+local win = DiscordLib:Window("My Window")
