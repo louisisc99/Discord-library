@@ -1,57 +1,119 @@
-# Discord-library
--- Load the DiscordLib UI Library
--- Credit: dawid#7205 (https://github.com/dawid-scripts/UI-Libs)
+
+---
+
+DiscordLib Roblox UI Library
+
+Usage
+
+Load the Library
+
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
 
--- Create the main window
-local win = DiscordLib:Window("My Discord UI")
+Create the Main Window
 
--- Add a server (tab) called "Main Server"
-local mainServer = win:Server("Main Server", "http://www.roblox.com/asset/?id=6031075938")
+local win = DiscordLib:Window("My UI")
 
--- Add a channel (sub-tab) called "Actions"
-local actionsChannel = mainServer:Channel("Actions")
+Add a Server (Tab)
 
--- Add a button to the "Actions" channel
-actionsChannel:Button("Greet", function()
-    DiscordLib:Notification("Notification", "Hello, world!", "Got it!")
+local server = win:Server("Main Server", "")
+
+Add a Channel (Sub-tab)
+
+local channel = server:Channel("Actions")
+
+Add UI Elements
+
+Button
+
+channel:Button("Example Button", function()
+    print("Button clicked!")
 end)
 
--- Add a toggle to enable or disable features
-actionsChannel:Toggle("Enable Cool Feature", false, function(state)
-    if state then
-        print("Cool feature enabled!")
-    else
-        print("Cool feature disabled!")
-    end
+Toggle
+
+channel:Toggle("Example Toggle", false, function(state)
+    print("Toggle state:", state)
 end)
 
--- Add a channel (sub-tab) called "Settings"
-local settingsChannel = mainServer:Channel("Settings")
+Slider
 
--- Add a slider to control a value
-local slider = settingsChannel:Slider("Adjust Volume", 0, 100, 50, function(value)
-    print("Volume set to:", value)
+local slider = channel:Slider("Example Slider", 0, 100, 50, function(value)
+    print("Slider value:", value)
 end)
 
--- Add a button to reset the slider
-settingsChannel:Button("Reset Volume", function()
-    slider:Change(50)
+Dropdown
+
+local dropdown = channel:Dropdown("Example Dropdown", {"Option 1", "Option 2"}, function(selection)
+    print("Selected:", selection)
 end)
 
--- Add a dropdown for selecting options
-local dropdown = settingsChannel:Dropdown("Select Option", {"Option 1", "Option 2", "Option 3"}, function(option)
-    print("Selected:", option)
+Color Picker
+
+channel:Colorpicker("Example Color Picker", Color3.new(1, 0, 0), function(color)
+    print("Selected color:", color)
 end)
 
--- Add buttons to manage the dropdown
-settingsChannel:Button("Clear Options", function()
-    dropdown:Clear()
+
+---
+
+This is the minimal, no-frills documentation. Just copy and paste the code to see the library in action!
+
+Understood! Here’s the clean and straight-to-the-point documentation for your GitHub repository, with no unnecessary extras. This version is easy to read and focused solely on using the library.
+
+
+---
+
+DiscordLib Roblox UI Library
+
+Usage
+
+Load the Library
+
+local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
+
+Create the Main Window
+
+local win = DiscordLib:Window("My UI")
+
+Add a Server (Tab)
+
+local server = win:Server("Main Server", "")
+
+Add a Channel (Sub-tab)
+
+local channel = server:Channel("Actions")
+
+Add UI Elements
+
+Button
+
+channel:Button("Example Button", function()
+    print("Button clicked!")
 end)
 
-settingsChannel:Button("Add New Option", function()
-    dropdown:Add("New Option")
+Toggle
+
+channel:Toggle("Example Toggle", false, function(state)
+    print("Toggle state:", state)
 end)
 
--- Add a channel (sub-tab) called "About"
-local aboutChannel = mainServer:Channel("About
+Slider
+
+local slider = channel:Slider("Example Slider", 0, 100, 50, function(value)
+    print("Slider value:", value)
+end)
+
+Dropdown
+
+local dropdown = channel:Dropdown("Example Dropdown", {"Option 1", "Option 2"}, function(selection)
+    print("Selected:", selection)
+end)
+
+Color Picker
+
+channel:Colorpicker("Example Color Picker", Color3.new(1, 0, 0), function(color)
+    print("Selected color:", color)
+end)
+
+
+---
