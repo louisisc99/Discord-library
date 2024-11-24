@@ -1,17 +1,34 @@
-# DiscordLib UI Library Example
+# DiscordLib UI Library for Roblox
 
-Welcome to the **DiscordLib** UI Library for Roblox! This repository demonstrates how to use the **DiscordLib** library to create Discord-style GUIs in Roblox. Below are instructions on how to load the library, create a window, add servers, and various UI components like buttons, sliders, and more. Each section includes code that you can **copy directly** from the README.
+## Welcome to the **DiscordLib UI Library** for Roblox!
+
+This repository provides a robust, user-friendly library for creating Discord-style GUIs within Roblox. If you want to integrate buttons, toggles, sliders, dropdowns, and more in your Roblox game, this library is for you! This document will explain how to get started, use each feature, and give you ready-to-copy code examples.
 
 ---
 
-## **How to Load the Library**
+## Table of Contents
 
-To use **DiscordLib** in your script, you first need to load it into your game. Add the following line of code to your Roblox script:
+1. [How to Load the Library](#how-to-load-the-library)
+2. [How to Create a Window](#how-to-create-a-window)
+3. [How to Add a Server](#how-to-add-a-server)
+4. [How to Add UI Elements](#how-to-add-ui-elements)
+    - [Buttons](#how-to-add-a-button)
+    - [Toggles](#how-to-add-a-toggle)
+    - [Sliders](#how-to-add-a-slider)
+    - [Dropdowns](#how-to-add-a-dropdown)
+    - [Colorpickers](#how-to-add-a-colorpicker)
+    - [Textboxes](#how-to-add-a-textbox)
+    - [Key Binds](#how-to-add-key-binds)
+    - [Labels](#how-to-add-labels)
+5. [How to Use Sliced Edges (Rounded Corners)](#how-to-use-sliced-edges-rounded-corners)
+6. [Credits](#credits)
+
+---
+
+## How to Load the Library
+
+To use **DiscordLib**, you need to load it in your Roblox script. Use the following line of code to load the library:
 
 ```lua
 -- Load the DiscordLib UI library
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
-
-
--- Create a new window with the title "My Window"
-local win = DiscordLib:Window("My Window")
